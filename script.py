@@ -3,14 +3,21 @@ from bs4 import BeautifulSoup
 import pandas as pd
 import re
 
+### Change only the URL for your search and specify the number of pages you want to retrieve ###
+
 url = "https://www.avito.ma/fr/tanger/bureaux_et_plateaux-%C3%A0_vendre"
+max_page_num = 4
+# path were you want to save the xlsx file
+path = "Avito_Dataset.xlsx"
+
+##### don't change #####
 
 dataset = []
 
 headers = {
   'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
 }
-for page in range(1, 3):
+for page in range(1, max_page_num):
     if page > 1:
         url += f"?o={page}"
     response = requests.request("GET", url, headers=headers)
@@ -59,4 +66,4 @@ for page in range(1, 3):
 
 ds = pd.DataFrame(dataset)
 # Save the DataFrame as an Excel file
-ds.to_excel("Avito_Dataset.xlsx", index=False)
+ds.to_excel(path, index=False)
