@@ -5,9 +5,9 @@ import re
 
 ### Change only the URL for your search and specify the number of pages you want to retrieve ###
 
-url = "https://www.avito.ma/fr/tanger/bureaux_et_plateaux-%C3%A0_vendre"
+url = "https://www.avito.ma/fr/sal%C3%A9/appartements-%C3%A0_vendre?areas=6_984,6_983"
 max_page_num = 4
-# path were you want to save the xlsx file
+# path where you want to save the xlsx file
 path = "Avito_Dataset.xlsx"
 
 ##### don't change #####
